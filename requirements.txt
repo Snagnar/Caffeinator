@@ -1,1 +1,1 @@
-pysqlite3
+adafruit-circuitpython-pn532
