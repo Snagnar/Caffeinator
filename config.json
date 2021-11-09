@@ -1,0 +1,4 @@
+{
+    "wallet_host": "localhost",
+    "wallet_port": 8080
+}

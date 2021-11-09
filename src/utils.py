@@ -1,6 +1,18 @@
 import logging
 from typing import Union
 from pathlib import Path
+import json
+
+config_path = Path("config.json")
+
+def load_config() -> dict:
+    if not config_path.exists():
+        raise ValueError(f"config path {str(config_path.resolve())} does not exist!")
+    config = {}
+    with config_path.open() as config_file:
+        config = json.load(config_file)
+    
+    return config
 
 def set_logging(log_file: Union[None, str], log_level: str, output_stdout: bool) -> None:
     """configures logging module.
